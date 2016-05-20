@@ -6,9 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CampaignHome extends AbstractHome {
 
-    @FindBy(name = "new")
-    private WebElement newButton;
-
     public NewCampaignForm clickNewButton() {
         wait.until(ExpectedConditions.elementToBeClickable(newButton));
         newButton.click();
