@@ -4,10 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-/**
- * Created by Carlos Gonzales on 5/16/2016.
- */
-public class CampaignHome extends AbstractBasePage {
+public class CampaignHome extends AbstractHome {
 
     @FindBy(name = "new")
     private WebElement newButton;

@@ -2,6 +2,7 @@ package com.jalasoft.testing.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CampaignDetail extends AbstractBasePage{
 
@@ -9,6 +10,7 @@ public class CampaignDetail extends AbstractBasePage{
     private WebElement campaignText;
 
     public String getCampaignName() {
+        wait.until(ExpectedConditions.visibilityOf(campaignText));
         return campaignText.getText();
     }
 }

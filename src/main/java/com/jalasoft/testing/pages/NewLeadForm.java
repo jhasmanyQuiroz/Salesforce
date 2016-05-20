@@ -5,11 +5,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
-/**
- * Created by Jhasmany Quiroz on 5/18/2016.
- */
 public class NewLeadForm extends AbstractBasePage {
 
+    /*
+    Lead Information
+     */
     @FindBy(id = "name_salutationlea2")
     private WebElement firstNameSelect;
 
@@ -57,6 +57,56 @@ public class NewLeadForm extends AbstractBasePage {
 
     @FindBy(id = "lea15")
     private WebElement numberOfEmployeesTextField;
+
+    /*
+    Address Information
+    */
+    @FindBy(id = "lea16street")
+    private WebElement streetTextArea;
+
+    @FindBy(id = "lea16city")
+    private WebElement cityTextField;
+
+    @FindBy(id = "lea16state")
+    private WebElement provinceTextField;
+
+    @FindBy(id = "lea16zip")
+    private WebElement postalCodeTextField;
+
+    @FindBy(id = "lea16country")
+    private WebElement countryTextField;
+
+    /*
+    Additional Information
+     */
+    @FindBy(id = "00N3600000GaKef")
+    private WebElement productInterestSelect;
+
+    @FindBy(id = "00N3600000GaKeg")
+    private WebElement sicCodeTextField;
+
+    @FindBy(id = "00N3600000GaKed")
+    private WebElement numberOfLocationTextField;
+
+    @FindBy(id = "00N3600000GaKec")
+    private WebElement currentGeneratorTextField;
+
+    @FindBy(id = "00N3600000GaKee")
+    private WebElement primarySelect;
+
+    /*
+    Description Information
+     */
+
+    @FindBy(id = "lea17")
+    private WebElement descriptionTextArea;
+
+    /*
+    Optional
+     */
+
+    @FindBy(id = "lea21")
+    private WebElement assigmentRuleCheckBox;
 
     @FindBy(xpath = "//input[@tabindex='30']")
     private WebElement saveButton;
@@ -125,6 +175,56 @@ public class NewLeadForm extends AbstractBasePage {
 
     public void setNumberOfEmployeesTextField(String numberOfEmployees) {
         setTextField(numberOfEmployeesTextField, numberOfEmployees);
+    }
+
+    public void setStreetTextArea(String street) {
+        setTextField(streetTextArea, street);
+    }
+
+    public void setCityTextField(String city) {
+        setTextField(cityTextField, city);
+    }
+
+    public void setProvinceTextField(String province) {
+        setTextField(provinceTextField, province);
+    }
+
+    public void setPostalCodeTextField(String postalCode) {
+        setTextField(postalCodeTextField, postalCode);
+    }
+
+    public void setCountryTextField(String country) {
+        setTextField(countryTextField, country);
+    }
+
+    public void setProductInterestSelect(String productInterest) {
+        setSelect(productInterestSelect, productInterest);
+    }
+
+    public void setSicCodeTextField(String sicCode) {
+        setTextField(sicCodeTextField, sicCode);
+    }
+
+    public void setNumberOfLocationTextField(String numberOfLocation) {
+        setTextField(numberOfLocationTextField, numberOfLocation);
+    }
+
+    public void setCurrentGeneratorTextField(String currenGenerator) {
+        setTextField(currentGeneratorTextField, currenGenerator);
+    }
+
+    public void setPrimarySelect(String primary) {
+        setSelect(primarySelect, primary);
+    }
+
+    public void setDescriptionTextArea(String description) {
+        setTextField(descriptionTextArea, description);
+    }
+
+    public void setAssignmentRuleCheckBox() {
+        if (!assigmentRuleCheckBox.isSelected()) {
+            assigmentRuleCheckBox.click();
+        }
     }
 
     public LeadDetail clickSaveButton() {

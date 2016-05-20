@@ -1,11 +1,12 @@
 package com.jalasoft.testing.pages;
 
-/**
- * Created by Jhasmany Quiroz on 5/18/2016.
- */
-public class LeadHome extends AbstractBasePage {
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-    public RelatedList goToRelatedList() {
-        return new RelatedList();
+public class LeadHome extends AbstractHome {
+
+    public AbstractBasePage clickNewButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(newButton));
+        newButton.click();
+        return new NewLeadForm();
     }
 }

@@ -22,15 +22,11 @@ public class Login extends AbstractBasePage {
     }
 
     public void setUserNameTextField(String username) {
-        wait.until(ExpectedConditions.visibilityOf(userNameTextField));
-        userNameTextField.clear();
-        userNameTextField.sendKeys(username);
+        setTextField(userNameTextField, username);
     }
 
     public void setPasswordTextField(String password) {
-        wait.until(ExpectedConditions.visibilityOf(passwordTextField));
-        passwordTextField.clear();
-        passwordTextField.sendKeys(password);
+        setTextField(passwordTextField, password);
     }
 
     public void clickLoginButton() {
@@ -49,4 +45,9 @@ public class Login extends AbstractBasePage {
         return clickLoginButtonToMainContainer();
     }
 
+    private void setTextField(WebElement webElement, String value) {
+        wait.until(ExpectedConditions.visibilityOf(webElement));
+        webElement.clear();
+        webElement.sendKeys(value);
+    }
 }
